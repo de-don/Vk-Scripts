@@ -2,7 +2,7 @@ import vk
 import time
 import config
 
-token = config.VK_TOKENS[5]
+token = config.VK_TOKENS[5]  #  token from group
 api = vk.API(vk.Session(),
              access_token=token,
              v='5.50')
@@ -27,6 +27,7 @@ while 1:
             t = api.messages.markAsRead(
                 peer_id=msg["user_id"]
             )
+            time.sleep(0.3)
             t = api.messages.markAsAnsweredDialog(
                 peer_id=msg["user_id"]
             )
